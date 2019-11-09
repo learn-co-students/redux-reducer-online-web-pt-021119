@@ -7,8 +7,9 @@ export function manageFriends(state, action){
         id: action.friend.id
     }
       return { friends: [...state.friends, friend] }
-    //case 'REMOVE_FRIEND':
-    //  return {}
+    case 'REMOVE_FRIEND':
+      let friends = state.friends.filter(f => f.id === action.id ? next : f);
+      return { friends: friends }
     default:
       return state
   }
